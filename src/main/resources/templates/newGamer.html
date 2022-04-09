@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Add New Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <div align="center">
+        <h1>Create New Player</h1>
+        <div class="col-sm-4">
+            <form action="#" th:action="@{/save}" th:object="${player}" method="post">
+
+
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Name</label>
+                        <td>
+                            <input type="hidden" th:field="*{playerId}" />
+                            <input type="text" th:field="*{name}" class="form-control" placeholder="Name" />
+                        </td>
+                    </tr>
+                </div>
+
+                <div alight="left">
+
+                    <tr>
+                        <label class="form-label" >Nickname</label>
+                        <td>
+                            <input type="text" th:field="*{nickname}" class="form-control" placeholder="Nickname" />
+                        </td>
+                    </tr>
+                </div>
+
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Team</label>
+                        <td>
+                            <input type="text" th:field="*{team}" class="form-control" placeholder="Team" />
+                        </td>
+                    </tr>
+                </div>
+
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Position</label>
+                        <td><input type="text" th:field="*{position}" class="form-control" placeholder="Position" /></td>
+                    </tr>
+                </div>
+
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Age</label>
+                        <td><input type="text" th:field="*{age}" class="form-control" placeholder="Age" /></td>
+                    </tr>
+                </div>
+
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Country</label>
+                        <td><input type="text" th:field="*{country}" class="form-control" placeholder="Country" /></td>
+                    </tr>
+                </div>
+
+
+                <tr>
+                    <td colspan="5"><button type="submit" class="btn btn-info">Save</button> </td>
+                </tr>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

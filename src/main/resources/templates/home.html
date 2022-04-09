@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+
+</head>
+<body>
+<div>
+    <h2 >Spring Boot Crud System for midterm project</h2>
+    <h3 >Done by Baiel Saparaliev COM-20</h3>
+    <h4 >Table with dota 2 pro-gamer</h4>
+    <tr>
+        <div align = "left" >
+            <h3><a  th:href="@{'/newGamer'}">Add new gamer</a></h3>
+        </div>
+
+    </tr>
+    <tr>
+
+        <div class="col-sm-15" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Gamer ID</th>
+                        <th>Name</th>
+                        <th>Nickname</th>
+                        <th>Team</th>
+                        <th>Position</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="player : ${playerList }">
+                        <td th:text="${player.playerId}">Gamer ID</td>
+                        <td th:text="${player.name}">Name</td>
+                        <td th:text="${player.nickname}">Nickname</td>
+                        <td th:text="${player.team}">Team</td>
+                        <td th:text="${player.position}">Position</td>
+                        <td th:text="${player.age}">Age</td>
+                        <td th:text="${player.country}">Country</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${player.playerId}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${player.playerId}}">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+    </tbody>
+    </table>
+
+    <img src="https://st-0.akipress.org/st_all/bilim/9/1519540999.2.jpg" alt="the best university">
+</div>
+</body>
+</html>
